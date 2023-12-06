@@ -1,0 +1,163 @@
+/* Configuracion de estilo de la pagina*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.titulo {
+    text-align: center;
+
+}
+
+/* Alinear los botones a la derecha del título */
+
+.titulo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px 4px;
+    padding: 2px 2px;
+    border: 2px 2px;
+}
+
+/* Estilos para ajuste de pantalla después de 990px de ancho */
+
+@media (max-width: 990px) {
+    .titulo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        margin-top: 10px;
+    }
+}
+
+/* Botones del titulo */
+
+.search-bar input{
+    color:#007BFF;;
+    font-size: 14px;
+    cursor:auto;
+}
+
+.search-bar button{
+    color:#fff;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #eb6e17;
+    transition: background-color 0.3s;
+    border: #eb6e17;
+}
+
+.search-bar button:hover {
+    background-color: #007BFF;
+}
+
+.search-bar button a.active {
+    background-color: #007BFF;
+}
+
+.User-Cart button{
+    color:#fff;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #007BFF;
+    transition: background-color 0.3s;
+    border: #007BFF;
+}
+
+.User-Cart button:hover {
+    background-color: #eb6e17;
+}
+
+.User-Cart button:active {
+    background-color: #eb6e17;
+
+}
+
+/* Barra de navegacion*/
+
+.custom-navbar .navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    border: 2px 2px;
+}
+
+/* Menu de la pagina */
+
+/* Presentacion de pagina */
+.title {
+    color:#007BFF;
+    margin: 20px 10px;
+}
+
+.title p{
+    color: #000000;
+}
+
+/* Carusel De imagenes*/
+
+.marcas{
+    margin: 10px 0px;
+    color: #FFF;
+    background: linear-gradient(#eb6e17, #007BFF)
+}
+
+#carouselExampleSlidesOnly img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+#carouselExampleSlidesOnly{
+    margin: 10px 0px;
+}
+
+/*Final de pagina*/
+
+.final {
+    background-color: #00000000; 
+    color: #000000; 
+    padding: 10px; 
+    text-align: center; 
+    
+}
+
+.whatsapp-icon,
+.facebook-icon,
+.instagram-icon,
+.youtube-icon {
+    margin: 10px 10px; 
+}
+
+.additional-content {
+    margin-top: 20px; 
+}
+
+/* Estilo Pagina 2*/
+
+.card {
+    width: 100%; 
+    text-align: center;
+}
+
+/* Estilo para las imágenes dentro de las tarjetas */
+
+.card img {
+    height: 400px; 
+    object-fit:contain; 
+}
+
+/* Estilo para el fondo y texto dentro de las tarjetas */
+
+.card-body {
+    background-color: #007BFF; 
+    color: #ffffff !important; 
+}
+
