@@ -1,3 +1,8 @@
+//Variables
+
+@import 'vars';
+
+
 // Configuracion de estilo de la pagina
 
 * {
@@ -21,9 +26,9 @@
     border: 2px 2px;
 }
 
-// Estilos para ajuste de pantalla después de 990px de ancho
+// Estilos para ajuste de pantalla después de 1024px de ancho
 
-@media (max-width: 990px) {
+@media (max-width: $tablet) {
     .titulo-container {
     flex-direction: column;
     align-items: center;
@@ -39,7 +44,7 @@
 .search-bar {
     
     input {
-    color: #007BFF;
+    color: $ColorPrincipal;
     font-size: 14px;
     cursor: auto;
     }
@@ -48,17 +53,17 @@
     color: #fff;
     font-size: 14px;
     cursor: pointer;
-    background-color: #eb6e17;
+    background-color: $ColorSecundario;
     transition: background-color 0.3s;
-    border: #eb6e17;
+    border: $ColorSecundario;
     }
 
-    button:hover {
-    background-color: #007BFF;
+    & &:hover {
+    background-color: $ColorPrincipal;
     }
 
-    button a.active {
-    background-color: #007BFF;
+    & & a.active {
+    background-color: $ColorPrincipal;
     }
 
 }
@@ -69,17 +74,17 @@
         color: #fff;
         font-size: 14px;
         cursor: pointer;
-        background-color: #007BFF;
+        background-color: $ColorPrincipal;
         transition: background-color 0.3s;
-        border: #007BFF;
+        border: $ColorPrincipal;
         }
 
-    button:hover {
-    background-color: #eb6e17;
+    & &:hover {
+    background-color: $ColorSecundario;
     }
 
-    button:active {
-    background-color: #eb6e17;
+    & &:active {
+    background-color: $ColorSecundario;
     }
 }
   // Barra de navegacion
@@ -98,7 +103,7 @@
 // Presentacion de pagina
 
 .title {
-    color: #007BFF;
+    color: $ColorPrincipal;
     margin: 20px 10px;
 
     p {
@@ -111,7 +116,7 @@
 .marcas {
     margin: 10px 0px;
     color: #fff;
-    background: linear-gradient(#eb6e17, #007BFF);
+    background: linear-gradient($ColorSecundario, $ColorPrincipal);
 }
 
 #carouselExampleSlidesOnly img {
@@ -160,7 +165,43 @@
 // Estilo para el fondo y texto dentro de las tarjetas
 
     .card-body {
-    background-color: #007BFF;
-    color: #ffffff !important;
+    background-color: $ColorPrincipal;
+    color: #fff9f9 !important;
     }
+}
+
+
+.container {
+
+    background: url('../img/otros/logo.gif') center center fixed;
+    background-size: cover;
+
+
+    form {
+            label {
+                color: $TextoPrincipal; 
+                font-weight: bold;
+            }
+
+            input,
+            textarea,
+            select {
+                background-color: $ColorPrincipal; 
+                color: $TextoPrincipal; 
+                border: 1px solid $TextoSecundario; 
+                border-radius: 5px; 
+                margin-bottom: 10px;
+                padding: 8px;
+                width: 100%;
+            }
+
+            button {
+                background-color: $ColorSecundario;
+                color: $TextoPrincipal;
+                border: none;
+                border-radius: 5px;
+                padding: 10px;
+                cursor: pointer;
+            }
+        }
 }

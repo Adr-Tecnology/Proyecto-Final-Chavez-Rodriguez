@@ -17,18 +17,15 @@
     <div class="titulo-container">
         <h1 class="titulo p-2"><a href="../index.html" target="_self"><img src="../img/titulo/titulo.png" alt="image/titulo"></a></h1>
             <div class="search-bar">
-                    <div class="container-fluid">
-                        <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="¿Qué Buscas Hoy?" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
-                        </form>
-                    </div>
+                <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="¿Qué Buscas Hoy?" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
             </div>
             <div class="User-Cart">
                 <button type="button" class="btn btn-outline-success">
                 <img src="../img/botones/user/user-32.png" alt="icon">
                 </button>
-
                 <button type="button" class="btn btn-outline-success">
                 <img src="../img/botones/cart/cart-32.png" alt="icon">
                 </button>
@@ -67,22 +64,50 @@
     <!--Menu Principal-->
 
     <menu>
-        
+    
+        <h2 class="title text-center"> Formulario de atencion
+            <p class="text-center" > 
+            </p></h2>
 
-        <div class="container mt-5">
-            <!-- Formulario -->
-            <form>
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre - Apellidos:</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Correo Electrónico:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-        </div>
+            <div class="container mt-5">
+                <!-- Formulario -->
+                <form action="procesarFormulario.php" method="post">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label"><strong>Nombre completo</strong></label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+            
+                    <div class="mb-3">
+                        <label for="correo" class="form-label"><strong>Correo electrónico</strong></label>
+                        <input type="email" class="form-control" id="correo" name="correo" required>
+                    </div>
+            
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label"><strong>Teléfono</strong></label>
+                        <input type="tel" class="form-control" id="telefono" name="telefono">
+                    </div>
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label"><strong>Direccion</strong></label>
+                        <input type="text" class="form-control" id="Direccion" name="Direccion" required>
+                    </div>        
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label"><strong>Mensaje</strong></label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="adjunto" class="form-label"><strong>Adjuntar archivo</strong></label>
+                        <input type="file" class="form-control" id="adjunto" name="adjunto[]"multiple>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fechaAtencion" class="form-label"><strong>Fecha y Hora de Atención</strong></label>
+                        <input type="datetime-local" class="form-control" id="fechaAtencion" name="fechaAtencion" required>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                        <button type="submit" class="btn btn-primary me-md-2"><strong>Enviar Solicitud</strong></button>
+                        <button type="reset" class="btn btn-secondary"><strong>Limpiar Formulario</strong></button>
+                    </div>
+                </form>
+            </div>
 
     </menu>
 
@@ -90,10 +115,10 @@
 
     <footer class="final">
         <!--iconos de contacto-->
-        <a class="whatsapp" href="https://web.whatsapp.com/"><img src="../img/botones/whatsapp/whatsapp-32.png" alt="icon" class="whatsapp-icon"></a>
-        <a class="facebook" href="https://www.facebook.com/"><img src="../img/botones/facebook/facebook-32.png" alt="icon" class="facebook-icon"></a>
-        <a class="instagram" href="https://www.instagram.com/"><img src="../img/botones/instagram/instagram-32.png" alt="icon" class="instagram-icon"></a>
-        <a class="youtube" href="https://www.youtube.com/"><img src="../img/botones/youtube/youtube-32.png" alt="icon" class="youtube-icon"></a>
+        <a class="whatsapp" href="https://web.whatsapp.com/" target="_blank"><img src="../img/botones/whatsapp/whatsapp-32.png" alt="icon" class="whatsapp-icon"></a>
+        <a class="facebook" href="https://www.facebook.com/" target="_blank"><img src="../img/botones/facebook/facebook-32.png" alt="icon" class="facebook-icon"></a>
+        <a class="instagram" href="https://www.instagram.com/" target="_blank"><img src="../img/botones/instagram/instagram-32.png" alt="icon" class="instagram-icon"></a>
+        <a class="youtube" href="https://www.youtube.com/" target="_blank"><img src="../img/botones/youtube/youtube-32.png" alt="icon" class="youtube-icon"></a>
         <p>Gracias por visitarnos, puedes encontrarnos en nuestras redes sociales dando clic en cada icono</p>
     </footer>
     <!--bootstrap Js-->
