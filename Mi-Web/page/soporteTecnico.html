@@ -3,7 +3,7 @@
 <head><!--titulo de la barra de busqueda-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
+    <title>Soporte Tecnico</title>
     <link rel="shortcut icon" href="../img/navegacion/vegetta-naranja.ico" type="image/x-icon">
     <!-- link bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -66,17 +66,39 @@
     <menu>
     
         <h2 class="title text-center"> Formulario de atencion
-            <p class="text-center" > 
-            </p></h2>
+            
+            <p class="text-center"> EEste formulario está diseñado para brindarle una asesoría personalizada a sus inconvenientes presentes en su equipo de cómputo, en el cual se requiere unos datos importantes para: 
+                <p>1. Analizar: el error que presenta en el equipo.</p> 
+                <p>2. Diagnosticar: cual es la falla y por qué sucedió.</p> 
+                <p>3.Reparar: Darle una solución efectiva a su equipo dejando correctamente funcionando.</p> 
+                <p>Se agendará una cita sea a su residencia o a nuestro punto de atención para brindarle, una excelente atención.
+            </p>
+        </h2>
 
-            <div class="container mt-5">
+        <h2 class="subtitle text-center p3 "> Ingresa los siguientes datos:</h2>
+                
                 <!-- Formulario -->
+                <div class="container mt-5">
                 <form action="procesarFormulario.php" method="post">
                     <div class="mb-3">
                         <label for="nombre" class="form-label"><strong>Nombre completo</strong></label>
                         <input type="text" class="form-control" id="nombre" name="nombre" required>
                     </div>
-            
+
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label"><strong>Tipo de documento</strong></label>
+                        <select id="tipoDocumento">
+                            <option value="NIT">NIT</option>
+                            <option value="Cedula">Cedula</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Identificacion" class="form-label"><strong># de Identificacion</strong></label>
+                        <input type="tel"form-control" id="Identificacion" name="Identificacion">
+                    </div>
+
                     <div class="mb-3">
                         <label for="correo" class="form-label"><strong>Correo electrónico</strong></label>
                         <input type="email" class="form-control" id="correo" name="correo" required>
@@ -86,26 +108,34 @@
                         <label for="telefono" class="form-label"><strong>Teléfono</strong></label>
                         <input type="tel" class="form-control" id="telefono" name="telefono">
                     </div>
+
                     <div class="mb-3">
                         <label for="direccion" class="form-label"><strong>Direccion</strong></label>
                         <input type="text" class="form-control" id="Direccion" name="Direccion" required>
-                    </div>        
+                    </div>    
+
                     <div class="mb-3">
                         <label for="mensaje" class="form-label"><strong>Mensaje</strong></label>
                         <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
                     </div>
+
                     <div class="mb-3">
                         <label for="adjunto" class="form-label"><strong>Adjuntar archivo</strong></label>
                         <input type="file" class="form-control" id="adjunto" name="adjunto[]"multiple>
                     </div>
+
                     <div class="mb-3">
-                        <label for="fechaAtencion" class="form-label"><strong>Fecha y Hora de Atención</strong></label>
-                        <input type="datetime-local" class="form-control" id="fechaAtencion" name="fechaAtencion" required>
+                        <label for="fechaAtencion" class="form-label"><strong>Fecha y Hora de Atención (Lunes a Viernes de 8 am a 6pm y Sábado de 8 am a 4 pm)</strong></label>
+                        <input type="datetime-local" class="form-control" id="fechaAtencion" name="fechaAtencion" required
+                            min="<?= date('Y-m-d', strtotime('next Monday')) ?>T08:00"
+                            max="<?= date('Y-m-d', strtotime('next Saturday')) ?>T19:00">
                     </div>
+
                     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                        <button type="submit" class="btn btn-primary me-md-2"><strong>Enviar Solicitud</strong></button>
                         <button type="reset" class="btn btn-secondary"><strong>Limpiar Formulario</strong></button>
+                        <button type="submit" class="btn btn-primary me-md-2"><strong>Enviar Solicitud</strong></button>
                     </div>
+
                 </form>
             </div>
 
@@ -118,8 +148,59 @@
         <a class="whatsapp" href="https://web.whatsapp.com/" target="_blank"><img src="../img/botones/whatsapp/whatsapp-32.png" alt="icon" class="whatsapp-icon"></a>
         <a class="facebook" href="https://www.facebook.com/" target="_blank"><img src="../img/botones/facebook/facebook-32.png" alt="icon" class="facebook-icon"></a>
         <a class="instagram" href="https://www.instagram.com/" target="_blank"><img src="../img/botones/instagram/instagram-32.png" alt="icon" class="instagram-icon"></a>
-        <a class="youtube" href="https://www.youtube.com/" target="_blank"><img src="../img/botones/youtube/youtube-32.png" alt="icon" class="youtube-icon"></a>
+        <a class="youtube" href="https://www.youtube.com/" target="_blank"><img src="../img/botones/youtube/youtube-32.png" 
+        alt="icon" class="youtube-icon"></a>
+        <!--Agradecimiento-->
         <p>Gracias por visitarnos, puedes encontrarnos en nuestras redes sociales dando clic en cada icono</p>
+        <!-- Datos Adicionales - Nosotros-->
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Nosotros</button>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <h4>Misión:</h4>
+            <p>Somos una empresa dedicada a la distribución, comercialización y venta de equipos y partes de computo, portátiles, cámaras de seguridad, POS, redes, y todo lo referente con productos tecnológicos. Brindamos asesoría e instalación de redes, ensamble de computadores, reparación y actualización de portátiles y equipos de mesa. contamos con personal capacitado para atender sus necesidades, nuestro objetivo es brindar siempre el mejor servicio y productos a nuestos clientes.
+            </p>
+                
+            <h4>Visión:</h4>
+            <p>Seremos la principal empresa en importación y distribución de tecnología ampliaremos nuestra infraestructura a nivel nacional para ofrecer una mejor cobertura y mejorar el servicio al cliente posicionándonos en el mercado como la empresa más reconocida en el sector tecnológico
+            </p>
+            <h4>Principios y valores:</h4>
+            <p>Nos enaltece caracterizamos por contar con calidad humana y profesional en todo nuestro equipo de trabajo donde prima la honestidad y el cumplimiento, credibilidad, confianza y compromiso en los servicios y productos que ofrecemos
+            </p>
+        </div>
+        </div>
+        <!-- Datos Adicionales - Soporte tecnico-->
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+            Informacion Soporte Tecnico
+        </button>
+        <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+        <div class="offcanvas-header">
+            <h3 class="offcanvas-title" id="staticBackdropLabel">INFORMACIÓN SOBRE SOPORTE TECNICO:</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                <p>A continuación, resolvemos las dudas más comunes sobre la atención de soporte técnico, tenga presente que nos caracterizamos por brindar una asesoría personal y de calidad, si tiene alguna duda, o se le presento algún inconveniente, no dude en contactarnos siempre estamos dispuestos a solucionar y acompañar a nuestros clientes en todo momento.</p>
+                    <h4>1. ¿Qué Servicios Ofrecemos?:</h4>
+                    <p>Los servicios que ofrecemos, son relacionados a equipos de computo en general “portátiles, Escritorio, Mac, Gamer, Impresoras, Servidores, Redes, realizamos el mantenimiento, configuración, instalación, actualización, reparación y recomendaciones de compra de equipos, accesorios y partes, para un óptimo desempeño de los equipos, asegurando que sea ideal para el uso de nuestros clientes.
+                    </p>
+                    <h4>2. ¿Tiene algún costo la visita a la residencia o empresa?:</h4>
+                    <p>El valor de la visita a la residencia o empresa del nuestro cliente, será de un valor adicional al servicio requerido de $10000 pesos, por el traslado al lugar donde se encuentra el cliente.
+                    </p>
+                    <h4>3. ¿Qué pasa si se presenta fallas después de la revisión con nosotros?:</h4>
+                    <p>Nosotros brindamos una garantía de 3 meses por fallas en los equipos de cómputo, que solicitan la reparación, equipos nuevos y partes de cómputo nos encargamos de validar con el proveedor de la marca si aun cuenta con la garantía, accesorios se brindan 5 días de garantía.
+                    </p>
+                    <h4>4. ¿Qué horarios de atención manejan?:</h4>
+                    <p> Siempre realizamos una jornada laboral de lunes a viernes de 8.00 AM a 6:00 PM y sábados de 8:00AM a 4:00PM, los servicios requeridos para visita a residencia o empresas se debe realizar un día antes para brindar la atención correctamente con el personal disponible el día requerido, los días Domingos y Festivos no tenemos atención al público.
+                    no olvide contactarnos para resolver cualquier inquietud adicional sobre nuestros servicios y productos.
+                    </p>
+                
+            </div>
+        </div>
+        </div>
+
     </footer>
     <!--bootstrap Js-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
