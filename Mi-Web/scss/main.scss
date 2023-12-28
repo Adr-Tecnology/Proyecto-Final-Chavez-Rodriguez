@@ -154,6 +154,12 @@
 
 // Estilo Pagina 2
 
+@media (max-width: $tablet) {
+    .card {
+      margin-bottom: 1em;
+    }
+  }
+
 .card {
     width: 100%;
     text-align: center;
@@ -256,17 +262,17 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 20px; /* Margen inferior para separar el título del contenido */
-  }
+    }
 
-  & & img {
+    & & img {
     margin: 0 10px; /* Ajusta el margen según sea necesario */
-  }
+    }
 
-  & & h4 {
+    & & h4 {
     margin-bottom: 10px; /* Margen inferior para separar las líneas */
-  }
+    }
 
-  & & a {
+    & & a {
     color:$ColorPrincipal; /* Color del enlace para resaltar el enlace de correo electrónico */
-  }
+    }
 }
