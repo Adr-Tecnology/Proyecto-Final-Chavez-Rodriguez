@@ -79,14 +79,14 @@
                 
                 <!-- Formulario -->
                 <div class="container mt-5">
-                <form action="procesarFormulario.php" method="post">
+                <form action="formulario.php" method="POST" class="speaker-form">
                     <div class="mb-3">
                         <label for="nombre" class="form-label"><strong>Nombre completo</strong></label>
                         <input type="text" class="form-control" id="nombre" name="nombre" required>
                     </div>
 
                     <div class="mb-3">
-                        <label for="nombre" class="form-label"><strong>Tipo de documento</strong></label>
+                        <label for="tipoDocumento" class="form-label"><strong>Tipo de documento</strong></label>
                         <select id="tipoDocumento">
                             <option value="NIT">NIT</option>
                             <option value="Cedula">Cedula</option>
